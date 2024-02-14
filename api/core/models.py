@@ -30,7 +30,7 @@ class Runway(models.Model):
     runway_designation = models.CharField(max_length=1, choices=RUNWAY_DESIGNATION_CHOICES)
     length = models.IntegerField()
     width = models.IntegerField()
-    airport = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="runway_airport")
+    airport = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="runways")
 
     def __str__(self):
         return f"{self.runway_number}{self.runway_designation}"
